@@ -61,6 +61,13 @@ services:
     depends_on:
       - cache-redis
 
+  redisinsight:
+    image: redislabs/redisinsight:latest
+    ports:
+      - "5540:5540"
+    depends_on:
+      - cache-redis
+
 volumes:
   db-postgres:
     driver: local
